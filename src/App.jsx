@@ -13,28 +13,9 @@ import Form from "./components/Form";
 import CountryList from "./components/CountryList";
 import City from "./components/City";
 
-const BASE_URL = "http://localhost:8000/cities";
+const BASE_URL = "http://localhost:8000";
 
 export default function App() {
-  const [cities, setCities] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-
-  useEffect(() => {
-    async function fetchCities() {
-      try {
-        setIsLoading(true);
-        const data = await axios(BASE_URL);
-        setCities(data.data);
-        console.log("data", data.data);
-      } catch {
-        alert("There was an error loading data...");
-      } finally {
-        setIsLoading(false);
-      }
-    }
-    fetchCities();
-  }, []);
-
   return (
     <BrowserRouter>
       <Routes>
@@ -46,15 +27,9 @@ export default function App() {
           {/* replace allows user to click back without issues
           navigate is kinda like a redirect for the url */}
           <Route index element={<Navigate to="cities" replace />} />
-          <Route
-            path="cities"
-            element={<CityList cities={cities} isLoading={isLoading} />}
-          />
+          <Route path="cities" element={<CityList />} />
           <Route path="cities/:id" element={<City />} />
-          <Route
-            path="countries"
-            element={<CountryList cities={cities} isLoading={isLoading} />}
-          />
+          <Route path="countries" element={<CountryList />} />
           <Route path="form" element={<Form />} />
         </Route>
         <Route path="*" element={<PageNotFound />} />
