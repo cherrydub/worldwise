@@ -41,8 +41,51 @@ function CitiesProvider({ children }) {
     }
   }
 
+  async function createCity(newCity) {
+    try {
+      setIsLoading(true);
+      const res = await axios.post(`${BASE_URL}/cities`, newCity);
+      const data = await res.data;
+      // setCurrentCity(data);
+      console.log("createCity(newCity) data:", data);
+      // fetchCities();
+      //the long way would be this:
+      setCities((currCities) => [...currCities, data]);
+    } catch {
+      alert("There was an error creating city...");
+    } finally {
+      setIsLoading(false);
+    }
+  }
+
+  async function deleteCity(cityId) {
+    try {
+      setIsLoading(true);
+      const res = await axios.delete(`${BASE_URL}/cities/${cityId}`);
+
+      setCities((currCities) => {
+        return currCities.filter((city) => {
+          return city.id !== cityId;
+        });
+      });
+    } catch {
+      alert("There was an error deleting city...");
+    } finally {
+      setIsLoading(false);
+    }
+  }
+
   return (
-    <CitiesContext.Provider value={{ cities, isLoading, currentCity, getCity }}>
+    <CitiesContext.Provider
+      value={{
+        cities,
+        isLoading,
+        currentCity,
+        getCity,
+        createCity,
+        deleteCity,
+      }}
+    >
       {children}
     </CitiesContext.Provider>
   );
