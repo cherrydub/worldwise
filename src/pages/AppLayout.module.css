@@ -4,4 +4,7 @@
   overscroll-behavior-y: none;
   display: flex;
   position: relative;
+  @media (width <= 800px) {
+    flex-wrap: wrap;
+  }
 }
