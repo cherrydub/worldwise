@@ -1,8 +1,21 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Resources Used:
 
-Currently, two official plugins are available:
+- [Leaflet](https://react-leaflet.js.org/): Interactive maps
+- [Sonner](https://sonner.emilkowal.ski/): Styled toastify notifications
+- [Axios](https://axios-http.com/docs/intro): HTTP requests (I almost always use Axios)
+- [ReactDatePicker](https://www.npmjs.com/package/react-datepicker): Easy date picker for form inputs
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Hooks Used:
+
+- `useState`
+- `useReducer`
+- `useEffect`
+- `useContext`
+
+## Custom Hooks:
+
+- Geolocation
+- Last Git push date
+- URL position
