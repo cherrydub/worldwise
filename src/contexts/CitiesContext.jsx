@@ -7,10 +7,11 @@ import {
 } from "react";
 import axios from "axios";
 import { Toaster, toast } from "sonner";
+const BASE_URL = import.meta.env.VITE_BASE_URL;
 
 // const BASE_URL = "http://localhost:8000";
 
-const BASE_URL = "https://my-json-server.typicode.com/cherrydub/worldwiseapi";
+// const BASE_URL = "https://my-json-server.typicode.com/cherrydub/worldwiseapi";
 
 const intitialState = {
   cities: [],
