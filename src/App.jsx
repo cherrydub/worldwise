@@ -15,6 +15,7 @@ import City from "./components/City";
 import { CitiesProvider } from "./contexts/CitiesContext";
 import { AuthProvider } from "./contexts/FakeAuthContext";
 import ProtectedRoute from "./pages/ProtectedRoute";
+import { Toaster, toast } from "sonner";
 
 // const BASE_URL = "http://localhost:8000";
 const BASE_URL = "https://my-json-server.typicode.com/cherrydub/worldwiseapi";
@@ -22,6 +23,7 @@ const BASE_URL = "https://my-json-server.typicode.com/cherrydub/worldwiseapi";
 export default function App() {
   return (
     <AuthProvider>
+      <Toaster />
       <CitiesProvider>
         <BrowserRouter>
           <Routes>
