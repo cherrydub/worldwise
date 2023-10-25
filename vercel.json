@@ -1,8 +1,1 @@
-{
-  "routes": [
-    {
-      "src": "/api/cities",
-      "dest": "api/cities.js"
-    }
-  ]
-}
+{ "routes": [{ "src": "/[^.]+", "dest": "/", "status": 200 }] }
