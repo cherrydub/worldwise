@@ -12,7 +12,7 @@ import {
 import { useCities } from "../contexts/CitiesContext";
 import { useGeolocation } from "../customHooks/useGeolocation";
 import Button from "./Button";
-import { useUrlPosition } from "../customHooks/UseUrlPosition";
+import { useUrlPosition } from "../customHooks/useUrlPosition";
 
 export default function Map() {
   const navigate = useNavigate();
