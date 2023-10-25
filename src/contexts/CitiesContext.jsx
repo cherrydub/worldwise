@@ -6,6 +6,7 @@ import {
   useReducer,
 } from "react";
 import axios from "axios";
+import { Toaster, toast } from "sonner";
 
 // const BASE_URL = "http://localhost:8000";
 
@@ -98,6 +99,7 @@ function CitiesProvider({ children }) {
       const res = await axios.post(`${BASE_URL}/cities`, newCity);
       const data = await res.data;
       dispatch({ type: "city/created", payload: data });
+      toast.success("City added!");
     } catch {
       dispatch({
         type: "rejected",
@@ -111,6 +113,7 @@ function CitiesProvider({ children }) {
     try {
       const res = await axios.delete(`${BASE_URL}/cities/${cityId}`);
       dispatch({ type: "city/deleted", payload: cityId });
+      toast.success("City deleted!");
     } catch {
       dispatch({
         type: "rejected",
