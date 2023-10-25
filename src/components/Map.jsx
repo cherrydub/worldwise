@@ -10,9 +10,9 @@ import {
   useMapEvents,
 } from "react-leaflet";
 import { useCities } from "../contexts/CitiesContext";
-import { useGeolocation } from "../hooks/useGeolocation";
+import { useGeolocation } from "../customHooks/useGeolocation";
 import Button from "./Button";
-import { useUrlPosition } from "../hooks/UseUrlPosition";
+import { useUrlPosition } from "../customHooks/UseUrlPosition";
 
 export default function Map() {
   const navigate = useNavigate();
